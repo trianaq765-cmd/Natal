@@ -143,6 +143,144 @@ window.addEventListener('scroll', () => {
 });
 
 // ==========================================
+// QUOTES CAROUSEL/SLIDER
+// ==========================================
+const quotesSlider = {
+    currentIndex: 0,
+    quotes: document.querySelectorAll('.quote-card'),
+    dots: document.querySelectorAll('.dot'),
+    prevBtn: document.querySelector('.quote-nav-btn.prev'),
+    nextBtn: document.querySelector('.quote-nav-btn.next'),
+    autoPlayInterval: null,
+    autoPlayDelay: 6000, // 6 seconds
+
+    init() {
+        if (this.quotes.length === 0) return;
+
+        // Event listeners
+        this.prevBtn.addEventListener('click', () => this.prev());
+        this.nextBtn.addEventListener('click', () => this.next());
+
+        // Dots click
+        this.dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => this.goTo(index));
+        });
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft') this.prev();
+            if (e.key === 'ArrowRight') this.next();
+        });
+
+        // Touch/Swipe support
+        this.addSwipeSupport();
+
+        // Auto play
+        this.startAutoPlay();
+
+        // Pause on hover
+        const sliderContainer = document.querySelector('.quotes-slider');
+        sliderContainer.addEventListener('mouseenter', () => this.stopAutoPlay());
+        sliderContainer.addEventListener('mouseleave', () => this.startAutoPlay());
+    },
+
+    prev() {
+        const newIndex = this.currentIndex === 0 ? this.quotes.length - 1 : this.currentIndex - 1;
+        this.slide(newIndex, 'left');
+    },
+
+    next() {
+        const newIndex = this.currentIndex === this.quotes.length - 1 ? 0 : this.currentIndex + 1;
+        this.slide(newIndex, 'right');
+    },
+
+    goTo(index) {
+        if (index === this.currentIndex) return;
+        const direction = index > this.currentIndex ? 'right' : 'left';
+        this.slide(index, direction);
+    },
+
+    slide(newIndex, direction) {
+        const currentQuote = this.quotes[this.currentIndex];
+        const newQuote = this.quotes[newIndex];
+
+        // Remove all animation classes
+        this.quotes.forEach(quote => {
+            quote.classList.remove('active', 'slide-out-left', 'slide-out-right', 'slide-in-left', 'slide-in-right');
+        });
+
+        // Animate out current
+        if (direction === 'right') {
+            currentQuote.classList.add('slide-out-left');
+            setTimeout(() => {
+                newQuote.classList.add('slide-in-right', 'active');
+            }, 100);
+        } else {
+            currentQuote.classList.add('slide-out-right');
+            setTimeout(() => {
+                newQuote.classList.add('slide-in-left', 'active');
+            }, 100);
+        }
+
+        // Update dots
+        this.dots[this.currentIndex].classList.remove('active');
+        this.dots[newIndex].classList.add('active');
+
+        this.currentIndex = newIndex;
+    },
+
+    addSwipeSupport() {
+        let touchStartX = 0;
+        let touchEndX = 0;
+        const sliderContainer = document.querySelector('.quotes-slider');
+
+        sliderContainer.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        });
+
+        sliderContainer.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            this.handleSwipe();
+        });
+
+        const handleSwipe = () => {
+            const swipeThreshold = 50;
+            if (touchEndX < touchStartX - swipeThreshold) {
+                this.next(); // Swipe left
+            }
+            if (touchEndX > touchStartX + swipeThreshold) {
+                this.prev(); // Swipe right
+            }
+        };
+
+        this.handleSwipe = handleSwipe;
+    },
+
+    startAutoPlay() {
+        this.autoPlayInterval = setInterval(() => {
+            this.next();
+        }, this.autoPlayDelay);
+    },
+
+    stopAutoPlay() {
+        if (this.autoPlayInterval) {
+            clearInterval(this.autoPlayInterval);
+            this.autoPlayInterval = null;
+        }
+    }
+};
+
+// Initialize quotes slider
+document.addEventListener('DOMContentLoaded', () => {
+    quotesSlider.init();
+});
+
+// Clean up on page unload
+window.addEventListener('beforeunload', () => {
+    quotesSlider.stopAutoPlay();
+});
+
+// ==========================================
 // PREVENT FOUC (Flash of Unstyled Content)
 // ==========================================
 window.addEventListener('load', () => {
