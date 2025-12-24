@@ -857,27 +857,66 @@ section {
 }
 
 /* ==========================================
-   QUOTE SECTION
+   QUOTE SECTION WITH CAROUSEL
 ========================================== */
 .quote-section {
     padding: 100px 24px;
     background: var(--gray-50);
+    position: relative;
+    overflow: hidden;
+}
+
+.quotes-slider {
+    position: relative;
+    max-width: 900px;
+    margin: 0 auto;
+    min-height: 400px;
 }
 
 .quote-card {
-    max-width: 900px;
-    margin: 0 auto;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 100%;
     padding: 80px 60px;
     text-align: center;
     box-shadow: var(--shadow-xl);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.quote-card.active {
+    opacity: 1;
+    visibility: visible;
+    position: relative;
+    left: 0;
+    transform: translateX(0);
+}
+
+.quote-card.slide-out-left {
+    animation: slideOutLeft 0.6s ease-out forwards;
+}
+
+.quote-card.slide-out-right {
+    animation: slideOutRight 0.6s ease-out forwards;
+}
+
+.quote-card.slide-in-left {
+    animation: slideInLeft 0.6s ease-out forwards;
+}
+
+.quote-card.slide-in-right {
+    animation: slideInRight 0.6s ease-out forwards;
 }
 
 .quote-icon {
     font-size: 72px;
-    color: var(--primary);
-    opacity: 0.3;
     line-height: 1;
     margin-bottom: 24px;
+    opacity: 0.3;
+    filter: grayscale(30%);
 }
 
 .quote-text {
@@ -889,10 +928,129 @@ section {
     margin-bottom: 24px;
 }
 
+.quote-punchline {
+    display: block;
+    color: var(--primary);
+    font-size: clamp(22px, 3.5vw, 36px);
+    margin-top: 12px;
+    font-style: normal;
+}
+
+.quote-small {
+    display: block;
+    font-size: clamp(18px, 2.5vw, 28px);
+    color: var(--gray-600);
+    margin-top: 8px;
+    font-style: italic;
+}
+
 .quote-author {
     font-size: 18px;
     color: var(--gray-600);
     font-style: italic;
+}
+
+/* Navigation */
+.quotes-navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 24px;
+    margin-top: 48px;
+}
+
+.quote-nav-btn {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    background: rgba(220, 20, 60, 0.1);
+    border: 2px solid var(--primary);
+    color: var(--primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.quote-nav-btn:hover {
+    background: var(--primary);
+    color: var(--white);
+    transform: scale(1.1);
+}
+
+.quote-nav-btn:active {
+    transform: scale(0.95);
+}
+
+.quote-dots {
+    display: flex;
+    gap: 12px;
+}
+
+.dot {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: var(--gray-300);
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.dot:hover {
+    background: var(--gray-500);
+    transform: scale(1.2);
+}
+
+.dot.active {
+    background: var(--primary);
+    width: 32px;
+    border-radius: 6px;
+}
+
+/* Slide Animations */
+@keyframes slideOutLeft {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+}
+
+@keyframes slideOutRight {
+    from {
+        opacity: 1;
+        transform: translateX(0);
+    }
+    to {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100%);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
 }
 
 /* ==========================================
@@ -1169,6 +1327,29 @@ section {
 
     .quote-card {
         padding: 48px 32px;
+        min-height: 350px;
+    }
+
+    .quote-icon {
+        font-size: 56px;
+    }
+
+    .quotes-navigation {
+        gap: 16px;
+    }
+
+    .quote-nav-btn {
+        width: 40px;
+        height: 40px;
+    }
+
+    .dot {
+        width: 10px;
+        height: 10px;
+    }
+
+    .dot.active {
+        width: 24px;
     }
 }
 
@@ -1211,4 +1392,21 @@ section {
         grid-template-columns: 1fr;
         gap: 24px;
     }
-       }
+
+    .quotes-slider {
+        min-height: 450px;
+    }
+
+    .quote-card {
+        padding: 40px 24px;
+    }
+
+    .quotes-navigation {
+        flex-direction: column;
+        gap: 24px;
+    }
+
+    .quote-dots {
+        order: -1;
+    }
+}
