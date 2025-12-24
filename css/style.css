@@ -134,6 +134,109 @@ body {
 }
 
 /* ==========================================
+   FIREWORKS CANVAS & BUTTON
+========================================== */
+#fireworks-canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+#fireworks-canvas.active {
+    opacity: 1;
+}
+
+.fireworks-trigger {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    z-index: 10001;
+    padding: 16px 28px;
+    background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 50%, #6BCB77 100%);
+    background-size: 200% 200%;
+    border: none;
+    border-radius: 50px;
+    color: var(--white);
+    font-family: var(--font-primary);
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4);
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all var(--transition-base);
+    animation: gradientShift 3s ease infinite, floatButton 3s ease-in-out infinite;
+    overflow: hidden;
+}
+
+.fireworks-trigger::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 0;
+    height: 0;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.5);
+    transform: translate(-50%, -50%);
+    transition: width 0.6s, height 0.6s;
+}
+
+.fireworks-trigger:hover::before {
+    width: 300px;
+    height: 300px;
+}
+
+.fireworks-trigger:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 12px 32px rgba(255, 107, 107, 0.6);
+}
+
+.fireworks-trigger:active {
+    transform: translateY(-2px) scale(1.02);
+}
+
+.btn-icon {
+    font-size: 24px;
+    position: relative;
+    z-index: 2;
+    animation: rotate 4s linear infinite;
+}
+
+.btn-text {
+    position: relative;
+    z-index: 2;
+}
+
+.fireworks-trigger.launching {
+    animation: shake 0.5s ease, gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+@keyframes floatButton {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-8px); }
+}
+
+@keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-4px); }
+    20%, 40%, 60%, 80% { transform: translateX(4px); }
+}
+
+/* ==========================================
    UTILITIES
 ========================================== */
 .container {
@@ -359,7 +462,7 @@ body {
 }
 
 /* ==========================================
-   COUNTDOWN TIMER (MODERN 2025)
+   COUNTDOWN TIMER
 ========================================== */
 .countdown-wrapper {
     margin-bottom: 48px;
@@ -950,7 +1053,6 @@ section {
     font-style: italic;
 }
 
-/* Navigation */
 .quotes-navigation {
     display: flex;
     align-items: center;
@@ -1008,7 +1110,6 @@ section {
     border-radius: 6px;
 }
 
-/* Slide Animations */
 @keyframes slideOutLeft {
     from {
         opacity: 1;
@@ -1207,7 +1308,6 @@ section {
     }
 }
 
-/* Scroll Animations */
 [data-aos] {
     opacity: 0;
     transform: translateY(30px);
@@ -1351,6 +1451,17 @@ section {
     .dot.active {
         width: 24px;
     }
+
+    .fireworks-trigger {
+        bottom: 24px;
+        right: 24px;
+        padding: 14px 24px;
+        font-size: 14px;
+    }
+
+    .btn-icon {
+        font-size: 20px;
+    }
 }
 
 @media (max-width: 480px) {
@@ -1409,4 +1520,19 @@ section {
     .quote-dots {
         order: -1;
     }
-}
+
+    .fireworks-trigger {
+        bottom: 20px;
+        right: 20px;
+        padding: 12px 20px;
+        font-size: 13px;
+    }
+
+    .btn-icon {
+        font-size: 18px;
+    }
+
+    .btn-text {
+        display: none;
+    }
+   }
