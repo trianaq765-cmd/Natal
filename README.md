@@ -1,41 +1,34 @@
-# 🎄 Christmas Website 2024
+# 🎄 Christmas 2025 - Modern Web Experience
 
-Website Natal profesional dengan design modern dan interaktif.
+> Perayaan Natal modern dengan design terkini untuk tahun 2025
 
-## ✨ Fitur
+[![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red)]()
+[![2025](https://img.shields.io/badge/Year-2025-gold)]()
+[![By ToingDc](https://img.shields.io/badge/By-ToingDc-green)]()
 
-- 🎨 Design modern dan responsif
-- ❄️ Animasi salju yang indah
-- ⏱️ Countdown timer ke Hari Natal
-- 💌 Form ucapan Natal interaktif
-- 🖼️ Galeri dengan gradient warna-warni
-- 📱 Mobile-friendly
-- 🎭 Smooth animations & transitions
+## ✨ Features
 
-## 🚀 Deploy ke Render.com
+### 🎨 Design Modern 2025
+- **Glassmorphism UI** - Efek kaca transparan yang elegan
+- **Gradient Mesh** - Warna-warna gradient modern
+- **Micro-interactions** - Animasi halus pada setiap interaksi
+- **Minimalist Layout** - Clean dan profesional
 
-### Langkah 1: Persiapan
-1. Upload semua file ke GitHub repository
-2. Pastikan struktur folder sesuai
+### 🚀 Performance
+- **Lightweight** - Vanilla JavaScript, tanpa framework
+- **Fast Loading** - Optimized CSS & JS
+- **SEO Friendly** - Semantic HTML5
+- **Accessibility** - ARIA labels & keyboard navigation
 
-### Langkah 2: Deploy di Render
-1. Buka [Render.com](https://render.com)
-2. Sign up/Login
-3. Klik "New" → "Static Site"
-4. Connect repository GitHub Anda
-5. Konfigurasi:
-   - **Name**: christmas-website-2024
-   - **Branch**: main
-   - **Build Command**: (kosongkan)
-   - **Publish Directory**: . (titik)
-6. Klik "Create Static Site"
+### 📱 Responsive
+- **Mobile First** - Perfect di semua device
+- **Tablet Optimized** - Layout adaptif
+- **Desktop Enhanced** - Pengalaman maksimal
 
-### Langkah 3: Done!
-Website Anda akan live dalam beberapa menit di:
-`https://christmas-website-2024.onrender.com`
+### 🎭 Interactive Elements
+- ⏱️ **Live Countdown** - Hitung mundur real-time ke Natal
+- ❄️ **Snowfall Animation** - Salju yang indah
+- 📊 **Animated Statistics** - Counter yang dinamis
+- 🎨 **Hover Effects** - Interaksi yang menarik
 
-## 💻 Development Lokal
-
-Cukup buka `index.html` di browser Anda!
-
-## 📁 Struktur File
+## 🛠️ Technology Stack
