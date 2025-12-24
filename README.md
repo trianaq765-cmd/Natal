@@ -1,10 +1,11 @@
-# 🎄 Christmas 2025 - Modern Web Experience
+# 🎄 Christmas 2025 - Ultimate Web Experience
 
-> Perayaan Natal modern dengan design terkini untuk tahun 2025
+> Perayaan Natal modern dengan design terkini, kembang api spektakuler, dan interaktivitas penuh untuk tahun 2025
 
 [![Made with Love](https://img.shields.io/badge/Made%20with-❤️-red)]()
 [![2025](https://img.shields.io/badge/Year-2025-gold)]()
 [![By ToingDc](https://img.shields.io/badge/By-ToingDc-green)]()
+[![Fireworks](https://img.shields.io/badge/Fireworks-🎆-orange)]()
 
 ## ✨ Features
 
@@ -25,11 +26,13 @@
 - **Tablet Optimized** - Layout adaptif
 - **Desktop Enhanced** - Pengalaman maksimal
 
-### 🎭 Interactive Elements
+### 🎆 Interactive Elements
 - ⏱️ **Live Countdown** - Hitung mundur real-time ke Natal
 - ❄️ **Snowfall Animation** - Salju yang indah
+- 🎆 **Fireworks Engine** - Kembang api spektakuler dengan sound!
 - 📊 **Animated Statistics** - Counter yang dinamis
 - 💭 **Quote Carousel** - 7 quotes & jokes (termasuk "Pinjam Seratus")
 - 🎨 **Hover Effects** - Interaksi yang menarik
+- 🔊 **Sound Effects** - Audio untuk kembang api
 
 ## 🛠️ Technology Stack
