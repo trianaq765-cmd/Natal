@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Rayakan Natal bersama kami - Pesan spesial dan ucapan hangat di musim liburan">
+    <title>Merry Christmas 2024 | Celebrate Together</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+</head>
+<body>
+    <!-- Snowfall Animation -->
+    <div class="snowflakes" aria-hidden="true">
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+        <div class="snowflake">❅</div>
+        <div class="snowflake">❆</div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="container">
+            <div class="nav-brand">🎄 Christmas 2024</div>
+            <ul class="nav-menu">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">Tentang</a></li>
+                <li><a href="#wishes">Ucapan</a></li>
+                <li><a href="#gallery">Galeri</a></li>
+                <li><a href="#contact">Kontak</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-text">
+                <h1 class="hero-title">Merry Christmas</h1>
+                <p class="hero-subtitle">Semoga kebahagiaan dan kedamaian menyertai Anda di musim liburan ini</p>
+                <div class="countdown" id="countdown">
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="days">00</span>
+                        <span class="countdown-label">Hari</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="hours">00</span>
+                        <span class="countdown-label">Jam</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="minutes">00</span>
+                        <span class="countdown-label">Menit</span>
+                    </div>
+                    <div class="countdown-item">
+                        <span class="countdown-value" id="seconds">00</span>
+                        <span class="countdown-label">Detik</span>
+                    </div>
+                </div>
+                <a href="#wishes" class="cta-button">Kirim Ucapan</a>
+            </div>
+        </div>
+        <div class="hero-decoration">
+            <div class="ornament ornament-1">🎁</div>
+            <div class="ornament ornament-2">⭐</div>
+            <div class="ornament ornament-3">🔔</div>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Tentang Natal</h2>
+                <p class="section-subtitle">Merayakan kasih dan kebersamaan</p>
+            </div>
+            <div class="about-grid">
+                <div class="about-card">
+                    <div class="card-icon">🎄</div>
+                    <h3>Tradisi Pohon Natal</h3>
+                    <p>Pohon Natal melambangkan kehidupan abadi dan harapan. Tradisi menghias pohon Natal telah menjadi bagian tak terpisahkan dari perayaan.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">🎁</div>
+                    <h3>Berbagi Hadiah</h3>
+                    <p>Memberikan hadiah adalah simbol kasih sayang dan apresiasi kepada orang-orang terkasih di sekitar kita.</p>
+                </div>
+                <div class="about-card">
+                    <div class="card-icon">👨‍👩‍👧‍👦</div>
+                    <h3>Kebersamaan Keluarga</h3>
+                    <p>Natal adalah waktu untuk berkumpul bersama keluarga, berbagi cerita, dan menciptakan kenangan indah.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Wishes Section -->
+    <section id="wishes" class="wishes">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Ucapan Natal</h2>
+                <p class="section-subtitle">Bagikan kebahagiaan Anda</p>
+            </div>
+            <div class="wishes-content">
+                <form class="wishes-form" id="wishesForm">
+                    <div class="form-group">
+                        <input type="text" id="name" placeholder="Nama Anda" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea id="message" rows="4" placeholder="Ucapan Natal Anda..." required></textarea>
+                    </div>
+                    <button type="submit" class="submit-button">Kirim Ucapan 🎄</button>
+                </form>
+                <div class="wishes-display" id="wishesDisplay">
+                    <div class="wish-card">
+                        <div class="wish-header">
+                            <strong>Maria</strong>
+                            <span class="wish-date">25 Des 2024</span>
+                        </div>
+                        <p class="wish-message">"Selamat Natal! Semoga tahun depan membawa lebih banyak kebahagiaan dan kesuksesan untuk kita semua. God bless! 🎄"</p>
+                    </div>
+                    <div class="wish-card">
+                        <div class="wish-header">
+                            <strong>Budi Santoso</strong>
+                            <span class="wish-date">24 Des 2024</span>
+                        </div>
+                        <p class="wish-message">"Merry Christmas to all! Terima kasih untuk tahun yang luar biasa ini. Semoga kita semua selalu diberkati. ⭐"</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Gallery Section -->
+    <section id="gallery" class="gallery">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Galeri Natal</h2>
+                <p class="section-subtitle">Momen-momen indah Natal</p>
+            </div>
+            <div class="gallery-grid">
+                <div class="gallery-item" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                    <div class="gallery-content">
+                        <h3>🎅</h3>
+                        <p>Santa Claus</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                    <div class="gallery-content">
+                        <h3>🎄</h3>
+                        <p>Christmas Tree</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                    <div class="gallery-content">
+                        <h3>⛄</h3>
+                        <p>Snowman</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);">
+                    <div class="gallery-content">
+                        <h3>🎁</h3>
+                        <p>Gifts</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                    <div class="gallery-content">
+                        <h3>🔔</h3>
+                        <p>Jingle Bells</p>
+                    </div>
+                </div>
+                <div class="gallery-item" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                    <div class="gallery-content">
+                        <h3>⭐</h3>
+                        <p>Star</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">Hubungi Kami</h2>
+                <p class="section-subtitle">Ada pertanyaan? Kami siap membantu</p>
+            </div>
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="info-item">
+                        <div class="info-icon">📧</div>
+                        <div>
+                            <h4>Email</h4>
+                            <p>christmas@celebration.com</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📱</div>
+                        <div>
+                            <h4>Telepon</h4>
+                            <p>+62 812-3456-7890</p>
+                        </div>
+                    </div>
+                    <div class="info-item">
+                        <div class="info-icon">📍</div>
+                        <div>
+                            <h4>Lokasi</h4>
+                            <p>Jakarta, Indonesia</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form">
+                    <input type="text" placeholder="Nama" required>
+                    <input type="email" placeholder="Email" required>
+                    <textarea rows="4" placeholder="Pesan Anda..." required></textarea>
+                    <button type="submit" class="submit-button">Kirim Pesan</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>🎄 Christmas 2024</h3>
+                    <p>Merayakan kebahagiaan dan kedamaian bersama</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="#home">Home</a></li>
+                        <li><a href="#about">Tentang</a></li>
+                        <li><a href="#wishes">Ucapan</a></li>
+                        <li><a href="#gallery">Galeri</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>Follow Us</h4>
+                    <div class="social-links">
+                        <a href="#" class="social-link">Facebook</a>
+                        <a href="#" class="social-link">Instagram</a>
+                        <a href="#" class="social-link">Twitter</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Christmas Celebration. Made with ❤️ for the holidays</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
