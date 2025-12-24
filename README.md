@@ -29,6 +29,7 @@
 - ⏱️ **Live Countdown** - Hitung mundur real-time ke Natal
 - ❄️ **Snowfall Animation** - Salju yang indah
 - 📊 **Animated Statistics** - Counter yang dinamis
+- 💭 **Quote Carousel** - 7 quotes & jokes (termasuk "Pinjam Seratus")
 - 🎨 **Hover Effects** - Interaksi yang menarik
 
 ## 🛠️ Technology Stack
